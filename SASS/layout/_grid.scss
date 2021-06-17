@@ -1,0 +1,55 @@
+.row{
+    max-width: $grid_width;
+    // background-color: #eee;
+    margin: 0 auto;
+    
+    
+
+    &:not(:last-child){
+        margin-bottom: $querter_vertical; 
+        @include respond(tab-port) {
+             margin-bottom: 6rem;
+             
+        }
+        
+    }
+    @include respond(tab-port) {
+        max-width: 50rem;
+
+    }
+    @include clearfix;
+    
+    [class^="col-"]{
+        //    background: orangered;
+           float: left;
+
+           &:not(:last-child) {
+               margin-right: $querter_horizontal;
+               @include respond(tab-port) {
+                 margin-right: 0;
+                 margin-bottom: 8rem;
+              }
+            }
+             @include respond(tab-port) {
+                 width: 100% !important;
+             }
+    }
+    .col-1-of-2{
+       
+         width: calc((100% - #{$querter_horizontal}) /2);
+      
+    } 
+
+    .col-1-of-3{
+        width: calc((100% - 2 * #{$querter_horizontal})/3);
+        // background: orangered;
+    float: left;
+    }
+  .col-1-of-4 {
+      width: calc((100% - 3 * #{$querter_horizontal})/4);
+    //   background: orangered;
+      float: left;
+  }
+
+}
+
